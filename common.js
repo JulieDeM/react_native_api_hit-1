@@ -3,7 +3,6 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  Image,
   Img,
   View
 } from 'react-native';
@@ -42,8 +41,7 @@ module.exports = class deco extends Component {
   fetch(url)
      .then((response) => response.json())
      .then((responseData) => {
-       var modified_image = responseData.image.replace("http","https");
-       var obj = {tip: responseData.info, tip_image: modified_image };
+       var obj = {tip: responseData.info };
        this.setState(obj);
      })
      .done();
